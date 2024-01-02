@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>NOVAL STEGNOGRAPHY</title>
+</head>
+<body>
+    <div class="container-fluid">
+        {% load static %}
+        <img src="{% static 'sale.png' %}" alt="person image"/>
+<h1>SignUp</h1>
+    <form method="POST" class="post-form" action="signupaction">
+        {% csrf_token %}
+        <table class="table table-striped table-bordered table-sm" style="width: 50%">
+            
+            <tr>
+
+                <td>UserName:</td>
+                <td><input type="text" name="txtusername" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="txtpassword" class="form-control" required></td>
+            </tr>
+
+            <tr>
+                <td>FirstName:</td>
+                <td><input type="text" name="txtfirstname" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>LastName:</td>
+                <td><input type="text" name="txtlastname" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="txtaddress" class="form-control" required></td>
+            </tr>
+            
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" name="txtmobile" pattern="[0-9]{10}" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="txtemail" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Register</button>{{errmsg}}
+                    <a href="/" class="btn btn-primary">Home</button>
+                </td>
+            </tr>
+        </table>
+        </form>
+        <div style="background-color: lightsalmon;">&nbsp;</div>
+    </div>
+</body>
+</html>

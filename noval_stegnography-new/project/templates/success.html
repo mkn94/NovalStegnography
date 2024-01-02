@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <title>Success</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Encryption Successful</h1>
+        <p>The image has been encrypted and saved successfully.</p>
+        <a href="{% url 'home' %}">Go back to home</a>
+    </div>
+</body>
+{% endblock %}

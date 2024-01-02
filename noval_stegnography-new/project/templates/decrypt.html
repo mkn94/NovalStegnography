@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+ 
+a.back-to-home-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+a.back-to-home-link:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<center>
+  <h1>Decrypt Message</h1>
+
+  <form action="{% url 'decrypt' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="image">Image to reveal the message from:</label><br>
+      <br>
+      <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+<br>
+
+    <button type="submit" class="btn btn-danger">Decrypt Message</button>
+  </form>
+<bt>
+  <br>
+  <br>
+  {% if decrypt %}
+
+  <br>
+    <p style="color:white;background-color:black;padding:65px;">The hidden message is: {{ decrypt }}</p>
+  {% endif %}
+<br><br>
+ <b> <a class="back-to-home-link" href="{% url 'home' %}">Go back to home</a></b>
+</center>
+{% endblock %}

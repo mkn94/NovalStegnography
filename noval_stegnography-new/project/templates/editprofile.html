@@ -1,0 +1,40 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<h2 style="color:blueviolet">Edit Profile</h2>
+<form method="POST" action="updateprofile">
+    {% csrf_token %}
+
+        <div class="form-group">
+            <label for="username">UserName: </label>
+            <input type="text" name="txtusername" style="max-width: 300px"  value="{{ login.username }}" class="form-control" readonly/>
+        </div>
+
+        <div class="form-group">
+            <label for="firstname">First Name: </label>
+            <input type="text" name="txtfirstname" style="max-width: 300px"  value="{{ login.firstname }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="txtlastname" style="max-width: 300px"  value="{{ login.lastname }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Address: </label>
+            <input type="text" name="txtaddress" style="max-width: 300px"  value="{{ login.address }}" class="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="mobile">Mobile: </label>
+            <input type="text" name="txtmobile" style="max-width: 300px"  value="{{ login.mobile }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Email: </label>
+            <input type="email" name="txtemail" style="max-width: 300px"  value="{{ login.email }}" class="form-control"/>
+        </div>
+
+        <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+    
+    
+
+{% endblock %}

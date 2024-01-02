@@ -1,0 +1,41 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<center><h2 style="color:coral">Manage Sign-Up Requests</h2></center>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+    <th>UserName</th>
+    <th>Password</th>
+    <th>Role</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for login in logins %}
+    <tr>
+    <td>{{ login.username }}</td>
+    <td>{{ login.password }}</td>
+    <td>{{ login.role }}</td>
+    <td>{{ login.firstname }}</td>
+    <td>{{ login.lastname }}</td>
+    <td>{{ login.address }}</td>
+    <td>{{ login.mobile }}</td>
+    <td>{{ login.email }}</td>
+    <td>
+    <a href="/approveuser/{{ login.username }}"><span class="glyphicon glyphicon-ok">Approve</span></a>
+    <a href="/rejectuser/{{ login.username }}"><span class="glyphicon glyphicon-remove"></span>Reject</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <br>
+    <br>
+    
+
+{% endblock %}

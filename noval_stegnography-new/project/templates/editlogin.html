@@ -1,0 +1,45 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+
+<form method="POST" action="/updatelogin/{{login.userid}}">
+    {% csrf_token %}
+    
+        <!-- <div class="form-group">
+            <label for="userid">UserID: </label>
+            <input type="number" name="userid" style="max-width: 300px"  value="{{ login.userid }}" class="form-control"/>
+        </div> -->
+        <div class="form-group">
+            <label for="username">UserName: </label>
+            <input type="text" name="username" style="max-width: 300px"  value="{{ login.username }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="text" name="password" style="max-width: 300px"  value="{{ login.password }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="role">Role: </label>
+            <input type="text" name="role" style="max-width: 300px"  value="{{ login.role }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" style="max-width: 300px"  value="{{ login.firstname }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="lastname" style="max-width: 300px"  value="{{ login.lastname }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile: </label>
+            <input type="text" name="mobile" style="max-width: 300px"  value="{{ login.mobile }}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="status">Status: </label>
+            <input type="number" name="status" style="max-width: 300px"  value="{{ login.status }}" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+    
+    
+
+{% endblock %}
